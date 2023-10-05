@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import But from './But'
 import Wetr from './Wetr'
 import { useState } from "react";
 import {getData} from './api/pressure/route'
