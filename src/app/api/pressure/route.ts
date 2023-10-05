@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function getData({q,}:{q?:string}) {
+  console.log(q)
   const now=new Date(Date.now());
   const params={
     key:process.env.WEATHER_API_KEY as string,

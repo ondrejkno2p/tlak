@@ -2,7 +2,7 @@
 import { ScatterChart, Scatter,XAxis,YAxis, LineChart, Line,Tooltip } from 'recharts';
 import { useState, useEffect } from 'react';
 
-export default function Wetr(
+export default function  Wetr(
     { data }:{
         data: {
             pressure_KPa: number;
