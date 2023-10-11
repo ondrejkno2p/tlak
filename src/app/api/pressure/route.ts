@@ -32,12 +32,12 @@ export async function getData({q,}:{q?:string}) {
   const bodyCurrent = await resCurrent.json()
   pressures.push({pressure_KPa:bodyCurrent.current.pressure_mb,time:0})
 
-  params.dt=now.getFullYear()+'-'+String(now.getUTCMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')
+  // params.dt=now.getFullYear()+'-'+String(now.getUTCMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')
   return pressures;
 }
 
 export async function GET(request: Request,) {
   const q = new URL(request.url).searchParams.get('q');
   const pressures = await getData({q:q?q:undefined});
-  return NextResponse.json(pressures,{headers:{'cache-control':'max-age=1800'}}) 
+  return NextResponse.json(pressures) 
 } 
